@@ -11,7 +11,7 @@ const QrCodeReader = () => {
     if (data) {
       console.log("yes")
        const data = await axios.patch(
-                 `http://localhost:3200/seller/currentUser/6634686a9ffcbd2f03c970d8`,
+                 `http://localhost:3200/api/seller/currentUser/6634686a9ffcbd2f03c970d8`,
                  {payment:true}
                );
       setQrCodeData(data); 
@@ -25,7 +25,7 @@ const QrCodeReader = () => {
 
   return (
     <div>
-      <h1>QR Code Reader</h1>
+      <h1 className='text-center'>Scan and Pay</h1>
       <QrReader
         delay={300}
         onError={handleError}
