@@ -9,6 +9,7 @@ const QrCodeReader = () => {
 
   const handleScan = async(data) => {
     if (data) {
+      console.log("yes")
        const data = await axios.patch(
                  `http://localhost:3200/seller/currentUser/6634686a9ffcbd2f03c970d8`,
                  {payment:true}
@@ -29,6 +30,7 @@ const QrCodeReader = () => {
         delay={300}
         onError={handleError}
         onScan={handleScan}
+        facingMode={"environment"}
         style={{ width: "100%" }}
       />
       {error && <p>Error: {error.message}</p>}
