@@ -23,14 +23,17 @@ const QrCodeReader = () => {
     setError(err);
   };
 
+   const constraints = {
+     facingMode: "environment", // Set to "environment" for back camera
+   };
   return (
     <div>
-      <h1 className='text-center'>Scan and Pay</h1>
+      <h1 className="text-center">Scan and Pay</h1>
       <QrReader
         delay={300}
         onError={handleError}
         onScan={handleScan}
-        facingmode={"environment"}
+        constraints={constraints}
         style={{ width: "100%" }}
       />
       {error && <p>Error: {error.message}</p>}
