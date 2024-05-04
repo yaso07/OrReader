@@ -30,7 +30,7 @@ const QrCodeReader = () => {
         delay={300}
         onError={handleError}
         onScan={handleScan}
-        facingMode={"environment"}
+        facingmode={"environment"}
         style={{ width: "100%" }}
       />
       {error && <p>Error: {error.message}</p>}
