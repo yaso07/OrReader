@@ -34,7 +34,7 @@ const QrCodeReader = () => {
   return (
     <div style={{ width: "100%",display:"flex",flexDirection:"column",alignItems:"center",columnGap:"20px" }}>
       <h1 style={{ textAlign: "center" }}>Scan and Pay</h1>
-      <QrReader style={{textAlign:"center"}}
+      <QrReader
         delay={300}
         onError={handleError}
         onScan={handleScan}
