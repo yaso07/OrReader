@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState } from 'react';
-import {QrReader} from "react-qr-reader";
+import QrReader from "react-qr-scanner";
 import { toast } from "react-toastify";
 const QrCodeReader = () => {
   const [qrCodeData, setQrCodeData] = useState(null);
@@ -27,18 +27,18 @@ const QrCodeReader = () => {
     setError(err);
   };
 
-   const constraints = {
-     audio:false,
-     facingMode: "environment", // Set to "environment" for back camera
-   };
+  //  const constraints = {
+  //    audio:false,
+  //    facingMode: "environment", 
+  //  };
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%",display:"flex",flexDirection:"column",alignItems:"center",columnGap:"20px" }}>
       <h1 style={{ textAlign: "center" }}>Scan and Pay</h1>
-      <QrReader
+      <QrReader style={{textAlign:"center"}}
         delay={300}
         onError={handleError}
         onScan={handleScan}
-        constraints={constraints}
+        facingMode={'environment'}
         style={{ height: "20%", width: "50%" }}
       />
       {error && <p>Error: {error.message}</p>}
@@ -49,7 +49,7 @@ const QrCodeReader = () => {
           {/* Render other desired properties */}
         </div>
       )}
-      <div style={{ textAlign: "center" }}>
+      <div style={{marginTop:"20px"}}>
         <button
 
           style={{
